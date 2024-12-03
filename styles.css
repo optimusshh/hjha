@@ -1,75 +1,33 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f3e5f5;
-    color: #333;
-}
-
-header {
-    background: #7b1fa2;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
-
-header nav {
-    margin-top: 1em;
-}
-
-header nav a {
-    color: #ffeb3b;
-    margin: 0 15px;
-    text-decoration: none;
+/* Animation for the name "Himanshu Jha" */
+#animated-name {
+    font-size: 2.5rem;
     font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffeb3b;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    animation: glow 1.5s infinite alternate ease-in-out, slide-in 2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
 }
 
-header nav a.active {
-    color: #ff9800;
-    text-decoration: underline;
+/* Keyframes for glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
+    }
 }
 
-section {
-    padding: 2em;
-    margin: 1em auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-}
-
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background: #7b1fa2;
-    color: #fff;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #ffeb3b;
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 4px;
-    color: #0288d1;
-}
-
-a {
-    color: #d32f2f;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.project {
-    border-left: 5px solid #ff5722;
-    padding-left: 1em;
+/* Keyframes for slide-in effect */
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
