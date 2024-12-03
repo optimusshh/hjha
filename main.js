@@ -1,49 +1,33 @@
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+// Update the year in the footer dynamically
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('header nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-  });
-  
-  // Typewriter Effect
-  const text = "Welcome to my Portfolio";
-  let index = 0;
-  function typeWriter() {
-    if (index < text.length) {
-      document.getElementById("typewriter").innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, 100);
-    }
-  }
-  window.onload = typeWriter;
-  
-  // Modal Popup
-  document.getElementById('openModal').addEventListener('click', () => {
-    document.getElementById('myModal').style.display = 'block';
-  });
-  
-  document.getElementById('closeModal').addEventListener('click', () => {
-    document.getElementById('myModal').style.display = 'none';
-  });
-  
-  window.addEventListener('click', (event) => {
-    if (event.target == document.getElementById('myModal')) {
-      document.getElementById('myModal').style.display = 'none';
-    }
-  });
-  
-  // Image Gallery Lightbox
-  document.querySelectorAll('.gallery img').forEach(image => {
-    image.addEventListener('click', () => {
-      document.getElementById('lightbox').style.display = 'block';
-      document.getElementById('lightboxImg').src = image.src;
+});
+
+// Highlight active section in navigation
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+
+window.addEventListener('scroll', () => {
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 50;
+        const sectionHeight = section.offsetHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
     });
-  });
-  
-  document.getElementById('lightbox').addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'none';
-  });
-  
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+});
