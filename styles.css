@@ -1,33 +1,219 @@
-/* Animation for the name "Himanshu Jha" */
-#animated-name {
-    font-size: 2.5rem;
+/* styles.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background: linear-gradient(135deg, #e1e5f2, #e4e4e9);
+}
+
+header {
+    background-color: #1e2a47;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #f9d342;  /* Golden color for the name */
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: #f9d342;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #f9d342;
+    color: #1e2a47;
+    border-radius: 5px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+h2 {
+    color: #1e2a47;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+p, ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project h3 {
+    color: #16a085;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 10px;
+}
+
+.project a {
+    color: #3498db;
     font-weight: bold;
-    letter-spacing: 2px;
-    color: #ffeb3b;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
-    animation: glow 1.5s infinite alternate ease-in-out, slide-in 2s ease-in-out;
-    opacity: 0;
-    transform: translateY(-50px);
+    transition: color 0.3s ease;
 }
 
-/* Keyframes for glowing effect */
-@keyframes glow {
-    0% {
-        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
-    }
+.project a:hover {
+    color: #1e2a47;
+    text-decoration: underline;
 }
 
-/* Keyframes for slide-in effect */
-@keyframes slide-in {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
+/* About Section */
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    max-width: 700px;
+    text-align: left;
+}
+
+.about-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 4px solid #f9d342; /* Golden border around the image */
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Education and Certifications Section */
+#education, #certifications {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#education p, #certifications ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+#certifications ul {
+    list-style-type: none;
+}
+
+#certifications ul li {
+    margin: 8px 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1e2a47;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #f9d342;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1e2a47;
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+#year {
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header nav {
+        display: block;
+        margin-top: 20px;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    header nav a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    section {
+        margin: 20px;
+    }
+
+    .project {
+        margin: 20px 0;
+    }
+
+    #about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 20px;
     }
 }
